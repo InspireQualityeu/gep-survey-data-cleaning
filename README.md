@@ -1,5 +1,5 @@
 # Project title
-Survey data cleaning 
+GEP Survey Data Cleaning 
 
 ## Description
 The survey data cleaning script contains R code for cleaning INSPIRE's survey, which monitors Gender Equality Plans.  
