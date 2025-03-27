@@ -5,6 +5,8 @@ setwd("C:/your_directory")
 
 #install.packages("readxl")  # Only needed if not installed
 library(readxl)
+library(labelled)
+
 
 
 # Load your data into R - Specify the full correct path
@@ -33,7 +35,7 @@ data[data$lfdn %in% c(1717, 1824), ]  # Show rows where lfdn is 1717 or 1824
 table(data$dispcode)
 # 2. Assign variable label (R doesn't natively support variable labels, but we can use the 'labelled' package)
 #install.packages("labelled")  # Run only if the package is not installed
-library(labelled)
+
 var_label(data$dispcode) <- "Disposition code of the Survey"
 # 3. Define labels for dispcode values
 dispcode_labels <- c(
@@ -71,7 +73,7 @@ colnames(data)
 # 1. Rename variable v_592 to Language
 colnames(data)[colnames(data) == "v_592"] <- "Language"
 # 2. Assign a label to the variable (using the labelled package)
-library(labelled)
+
 var_label(data$Language) <- "1.0 Language of the survey"
 # 3. Define language labels
 language_labels <- c(
@@ -93,7 +95,7 @@ table(data$Language)
 # 1. Rename variable v_594 to Consent
 colnames(data)[colnames(data) == "v_594"] <- "Consent"
 # 2. Assign a variable label (R does not have built-in labels like Stata)
-library(labelled)
+
 var_label(data$Consent) <- "1.1 Informed consent"
 # 3. Define labels for Consent values
 consent_labels <- c(
